@@ -1,0 +1,1314 @@
+{
+  "info": {
+    "name": "api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "auth": {
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ],
+    "type": "bearer"
+  },
+  "item": [
+    {
+      "name": "Annotation",
+      "item": [
+        {
+          "name": "Get Annotations",
+          "request": {
+            "description": "Get a page of annotations data for a given project.\nThis endpoint works like `/tasks`, but you must provide\n`page` and `size` parameters. Up to `size` records\nwill be returned, starting from `page` * `size`.\nuser relates to user.full_name.",
+            "url": {
+              "raw": "{{baseUrl}}/annotations?project_id=&size=&page=&complete=&flagged=&reviewed=&user=&keywords=&task_id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "annotations"
+              ],
+              "query": [
+                {
+                  "key": "project_id",
+                  "value": ""
+                },
+                {
+                  "key": "size",
+                  "value": ""
+                },
+                {
+                  "key": "page",
+                  "value": ""
+                },
+                {
+                  "key": "complete",
+                  "value": ""
+                },
+                {
+                  "key": "flagged",
+                  "value": ""
+                },
+                {
+                  "key": "reviewed",
+                  "value": ""
+                },
+                {
+                  "key": "user",
+                  "value": ""
+                },
+                {
+                  "key": "keywords",
+                  "value": ""
+                },
+                {
+                  "key": "task_id",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Create Annotation",
+          "request": {
+            "description": "Create an annotation",
+            "url": {
+              "raw": "{{baseUrl}}/annotations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "annotations"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"task_id\": 0,\n    \"external_id\": \"example\",\n    \"label_id\": \"example\",\n    \"start\": 0,\n    \"end\": 0,\n    \"text\": \"example\",\n    \"strength\": 0\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Upsert Annotation",
+          "request": {
+            "description": "Create or update an annotation.\nThis endpoint is only used for single-label classification.",
+            "url": {
+              "raw": "{{baseUrl}}/annotations/:annotation_id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "annotations",
+                ":annotation_id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "annotation_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"task_id\": 0,\n    \"label_id\": \"example\",\n    \"start\": 0,\n    \"end\": 0,\n    \"text\": \"example\",\n    \"strength\": 0\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Delete Annotation",
+          "request": {
+            "description": "Delete a given annotation",
+            "url": {
+              "raw": "{{baseUrl}}/annotations/:annotation_id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "annotations",
+                ":annotation_id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "annotation_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "DELETE"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Update Annotation",
+          "request": {
+            "description": "Update a given annotation.",
+            "url": {
+              "raw": "{{baseUrl}}/annotations/:annotation_id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "annotations",
+                ":annotation_id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "annotation_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "PATCH",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"reviewed\": true,\n    \"start\": 0,\n    \"end\": 0,\n    \"label_id\": \"example\",\n    \"strength\": 0,\n    \"text\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Dataset",
+      "item": [
+        {
+          "name": "Get Datasets",
+          "request": {
+            "description": "Get dataset details and associated field meta-data for any data-sets associated to your user.",
+            "url": {
+              "raw": "{{baseUrl}}/datasets",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "datasets"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Create Dataset",
+          "request": {
+            "description": "Upload a dataset that you can use in your Humanloop projects to train models.",
+            "url": {
+              "raw": "{{baseUrl}}/datasets",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "datasets"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"example\",\n    \"data\": [\n        \"UNKNOWN\"\n    ],\n    \"fields\": [\n        {\n            \"name\": \"example\",\n            \"data_type\": \"text\",\n            \"display_name\": \"example\",\n            \"required\": true,\n            \"distinct_values\": [\n                \"example\"\n            ],\n            \"default\": \"UNKNOWN\",\n            \"meta\": {\n                \"example\": \"UNKNOWN\"\n            }\n        }\n    ],\n    \"description\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Get Dataset",
+          "request": {
+            "description": "Get dataset details and associated field meta-data for a specific data-set associated to your user.",
+            "url": {
+              "raw": "{{baseUrl}}/datasets/:id?num_records=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "datasets",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "num_records",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Update Dataset",
+          "request": {
+            "description": "Update an existing dataset by adding additional data points.",
+            "url": {
+              "raw": "{{baseUrl}}/datasets/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "datasets",
+                ":id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": [\n        \"UNKNOWN\"\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Delete Dataset",
+          "request": {
+            "description": "Delete your dataset if it is no longer needed.",
+            "url": {
+              "raw": "{{baseUrl}}/datasets/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "datasets",
+                ":id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "DELETE"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Update Dataset Details",
+          "request": {
+            "description": "Update the details of your dataset such as its name and description.",
+            "url": {
+              "raw": "{{baseUrl}}/datasets/:id/metadata",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "datasets",
+                ":id",
+                "metadata"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"example\",\n    \"description\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Data Snapshot",
+      "item": [
+        {
+          "name": "Get Project Data Snapshots",
+          "request": {
+            "url": {
+              "raw": "{{baseUrl}}/projects/{project_id}/data-snapshots",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{project_id}",
+                "data-snapshots"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "project_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Create Data Snapshot",
+          "request": {
+            "url": {
+              "raw": "{{baseUrl}}/projects/{project_id}/data-snapshots?search=&metadata_search=&start_date=&end_date=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{project_id}",
+                "data-snapshots"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": ""
+                },
+                {
+                  "key": "metadata_search",
+                  "value": ""
+                },
+                {
+                  "key": "start_date",
+                  "value": ""
+                },
+                {
+                  "key": "end_date",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "key": "project_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"example\",\n    \"description\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Update Data Snapshot",
+          "request": {
+            "url": {
+              "raw": "{{baseUrl}}/projects/{project_id}/data-snapshots/:data_snapshot_id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{project_id}",
+                "data-snapshots",
+                ":data_snapshot_id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "project_id",
+                  "value": ""
+                },
+                {
+                  "key": "data_snapshot_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "PATCH",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"example\",\n    \"description\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Label",
+      "item": [
+        {
+          "name": "Get Labels",
+          "request": {
+            "description": "Get all labels for an existing project output definition",
+            "url": {
+              "raw": "{{baseUrl}}/outputs/{id}/labels",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "outputs",
+                "{id}",
+                "labels"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Update Labels",
+          "request": {
+            "description": "Update the data on an array of labels based on id",
+            "url": {
+              "raw": "{{baseUrl}}/outputs/{id}/labels",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "outputs",
+                "{id}",
+                "labels"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\n        \"id\": \"example\",\n        \"name\": \"example\",\n        \"display_name\": \"example\",\n        \"description\": \"example\"\n    }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Add Labels",
+          "request": {
+            "description": "Add a label or list of labels to an existing project's output definition",
+            "url": {
+              "raw": "{{baseUrl}}/outputs/{id}/labels",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "outputs",
+                "{id}",
+                "labels"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "POST"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Delete Labels",
+          "request": {
+            "url": {
+              "raw": "{{baseUrl}}/outputs/{id}/labels",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "outputs",
+                "{id}",
+                "labels"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "DELETE",
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\n        \"id\": \"example\",\n        \"name\": \"example\",\n        \"display_name\": \"example\",\n        \"description\": \"example\"\n    }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Update Label",
+          "request": {
+            "description": "Update any of the data for an existing label with label_id",
+            "url": {
+              "raw": "{{baseUrl}}/outputs/{id}/labels/:label_id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "outputs",
+                "{id}",
+                "labels",
+                ":label_id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                },
+                {
+                  "key": "label_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"example\",\n    \"name\": \"example\",\n    \"display_name\": \"example\",\n    \"description\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Delete Label",
+          "request": {
+            "url": {
+              "raw": "{{baseUrl}}/outputs/{id}/labels/:label_id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "outputs",
+                "{id}",
+                "labels",
+                ":label_id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                },
+                {
+                  "key": "label_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "DELETE"
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Metrics",
+      "item": [
+        {
+          "name": "Get Sample Logs",
+          "request": {
+            "url": {
+              "raw": "{{baseUrl}}/projects/{project_id}/metrics/logs",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{project_id}",
+                "metrics",
+                "logs"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "project_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Run Metric Calculations",
+          "request": {
+            "description": "Calculate metrics across all data in project.",
+            "url": {
+              "raw": "{{baseUrl}}/projects/{project_id}/metrics/:metric_id/run",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{project_id}",
+                "metrics",
+                ":metric_id",
+                "run"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "project_id",
+                  "value": ""
+                },
+                {
+                  "key": "metric_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "POST"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Get Metrics For Model Configs",
+          "request": {
+            "url": {
+              "raw": "{{baseUrl}}/projects/{project_id}/model-config-metrics",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{project_id}",
+                "model-config-metrics"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "project_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Model",
+      "item": [
+        {
+          "name": "Fine Tune",
+          "request": {
+            "description": "Trigger the fine-tuning process for a specific base model and data snapshot.",
+            "url": {
+              "raw": "{{baseUrl}}/projects/{project_id}/fine-tune",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{project_id}",
+                "fine-tune"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "project_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"example\",\n    \"data_snapshot\": \"example\",\n    \"config\": {\n        \"provider\": \"openai\",\n        \"base_model\": \"example\",\n        \"validation_split\": 0,\n        \"use_corrections\": true,\n        \"prompt_template\": \"example\",\n        \"generation_template\": \"example\"\n    },\n    \"provider_api_keys\": {\n        \"openai\": \"example\",\n        \"ai21\": \"example\",\n        \"mock\": \"example\",\n        \"anthropic\": \"example\"\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Get Fine Tuned Models",
+          "request": {
+            "description": "Get a list of all fine-tuned models associated to a given project.",
+            "url": {
+              "raw": "{{baseUrl}}/projects/{project_id}/models/fine-tuned",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{project_id}",
+                "models",
+                "fine-tuned"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "project_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Update Fine Tuned Models",
+          "request": {
+            "description": "Updates your fine-tuned models.\nUses the specified provider API keys for provider-specific details.",
+            "url": {
+              "raw": "{{baseUrl}}/projects/{project_id}/models/fine-tuned/update",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{project_id}",
+                "models",
+                "fine-tuned",
+                "update"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "project_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"provider_api_keys\": {\n        \"example\": \"example\"\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Update Fine Tuned Model",
+          "request": {
+            "description": "Modifies user-specified attributes of the specified fine-tuned models.",
+            "url": {
+              "raw": "{{baseUrl}}/projects/{project_id}/models/fine-tuned/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{project_id}",
+                "models",
+                "fine-tuned",
+                ":id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "project_id",
+                  "value": ""
+                },
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "PATCH",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"provider_api_keys\": {\n        \"example\": \"example\"\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Model Configuration",
+      "item": [
+        {
+          "name": "Get Project Model Configs",
+          "request": {
+            "description": "Get an array of model_configs associated to your project",
+            "url": {
+              "raw": "{{baseUrl}}/projects/{project_id}/model-configs",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{project_id}",
+                "model-configs"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "project_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Delete Project Model Config",
+          "request": {
+            "description": "Delete a model configuration from your project.",
+            "url": {
+              "raw": "{{baseUrl}}/projects/{project_id}/model-configs/:model_config_id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{project_id}",
+                "model-configs",
+                ":model_config_id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "project_id",
+                  "value": ""
+                },
+                {
+                  "key": "model_config_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "DELETE"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Update Project Model Config",
+          "request": {
+            "description": "Update a model configuration within your project",
+            "url": {
+              "raw": "{{baseUrl}}/projects/{project_id}/model-configs/:model_config_id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                "{project_id}",
+                "model-configs",
+                ":model_config_id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "project_id",
+                  "value": ""
+                },
+                {
+                  "key": "model_config_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "PATCH",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"display_name\": \"example\",\n    \"description\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Monitoring",
+      "item": [
+        {
+          "name": "Get Logs",
+          "request": {
+            "description": "Retrieve paginated logs from the server. Sorting and filtering are supported through query params. See docstring of get_sorted_filtered_project_data_from_query_params for more details.",
+            "url": {
+              "raw": "{{baseUrl}}/logs?project_id=&search=&metadata_search=&start_date=&end_date=&size=&page=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "logs"
+              ],
+              "query": [
+                {
+                  "key": "project_id",
+                  "value": ""
+                },
+                {
+                  "key": "search",
+                  "value": ""
+                },
+                {
+                  "key": "metadata_search",
+                  "value": ""
+                },
+                {
+                  "key": "start_date",
+                  "value": ""
+                },
+                {
+                  "key": "end_date",
+                  "value": ""
+                },
+                {
+                  "key": "size",
+                  "value": ""
+                },
+                {
+                  "key": "page",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Delete Logs",
+          "request": {
+            "url": {
+              "raw": "{{baseUrl}}/logs",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "logs"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [],
+            "method": "DELETE"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Export Raw",
+          "request": {
+            "description": "Retrieve filtered logs in a normalized CSV. Sorting and filtering are supported through query params. See docstring of get_sorted_filtered_project_data_from_query_params for more details.",
+            "url": {
+              "raw": "{{baseUrl}}/logs/export-raw?project_id=&search=&metadata_search=&start_date=&end_date=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "logs",
+                "export-raw"
+              ],
+              "query": [
+                {
+                  "key": "project_id",
+                  "value": ""
+                },
+                {
+                  "key": "search",
+                  "value": ""
+                },
+                {
+                  "key": "metadata_search",
+                  "value": ""
+                },
+                {
+                  "key": "start_date",
+                  "value": ""
+                },
+                {
+                  "key": "end_date",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [],
+            "method": "POST"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Export Fine Tune",
+          "request": {
+            "description": "Retrieve filtered logs in the format for fine-tuning. Sorting and filtering are supported through query params. See docstring of get_sorted_filtered_project_data_from_query_params for more details.",
+            "url": {
+              "raw": "{{baseUrl}}/logs/export-fine-tune?project_id=&search=&metadata_search=&start_date=&end_date=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "logs",
+                "export-fine-tune"
+              ],
+              "query": [
+                {
+                  "key": "project_id",
+                  "value": ""
+                },
+                {
+                  "key": "search",
+                  "value": ""
+                },
+                {
+                  "key": "metadata_search",
+                  "value": ""
+                },
+                {
+                  "key": "start_date",
+                  "value": ""
+                },
+                {
+                  "key": "end_date",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"separator\": \"example\",\n    \"completion_initial_whitespace\": \"example\",\n    \"stop_sequence\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "Delete Feedback Label",
+          "request": {
+            "url": {
+              "raw": "{{baseUrl}}/projects/:project_id/feedback/:feedback_type/:feedback_value",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projects",
+                ":project_id",
+                "feedback",
+                ":feedback_type",
+                ":feedback_value"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "project_id",
+                  "value": ""
+                },
+                {
+                  "key": "feedback_type",
+                  "value": ""
+                },
+                {
+                  "key": "feedback_value",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "DELETE"
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    }
+  ]
+}
