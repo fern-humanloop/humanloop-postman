@@ -6,24 +6,34 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": "",
+      "value": "https://api.humanloop.com/v2",
       "type": "string"
     },
     {
-      "key": "token",
+      "key": "X-API-KEY",
       "value": "",
       "type": "string"
     }
   ],
   "auth": {
-    "bearer": [
+    "apikey": [
       {
-        "key": "token",
-        "value": "{{token}}",
+        "key": "value",
+        "value": "{{X-API-KEY}}",
+        "type": "string"
+      },
+      {
+        "key": "key",
+        "value": "{{X-API-KEY}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
         "type": "string"
       }
     ],
-    "type": "bearer"
+    "type": "apikey"
   },
   "item": [
     {
@@ -81,7 +91,13 @@
               ],
               "variable": []
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "GET"
           },
           "response": [],
@@ -102,7 +118,13 @@
               "query": [],
               "variable": []
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "POST",
             "body": {
               "mode": "raw",
@@ -138,7 +160,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "PUT",
             "body": {
               "mode": "raw",
@@ -174,7 +202,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "DELETE"
           },
           "response": [],
@@ -201,7 +235,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "PATCH",
             "body": {
               "mode": "raw",
@@ -237,7 +277,13 @@
               "query": [],
               "variable": []
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "GET"
           },
           "response": [],
@@ -258,7 +304,13 @@
               "query": [],
               "variable": []
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "POST",
             "body": {
               "mode": "raw",
@@ -299,7 +351,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "GET"
           },
           "response": [],
@@ -326,7 +384,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "PUT",
             "body": {
               "mode": "raw",
@@ -362,7 +426,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "DELETE"
           },
           "response": [],
@@ -390,7 +460,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "PUT",
             "body": {
               "mode": "raw",
@@ -432,7 +508,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "GET"
           },
           "response": [],
@@ -476,7 +558,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "POST",
             "body": {
               "mode": "raw",
@@ -517,7 +605,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "PATCH",
             "body": {
               "mode": "raw",
@@ -560,7 +654,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "GET"
           },
           "response": [],
@@ -588,7 +688,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "PUT",
             "body": {
               "mode": "raw",
@@ -625,7 +731,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "POST"
           },
           "response": [],
@@ -652,7 +764,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "DELETE",
             "body": {
               "mode": "raw",
@@ -694,7 +812,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "PUT",
             "body": {
               "mode": "raw",
@@ -735,7 +859,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "DELETE"
           },
           "response": [],
@@ -769,7 +899,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "GET"
           },
           "response": [],
@@ -803,7 +939,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "POST"
           },
           "response": [],
@@ -830,7 +972,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "GET"
           },
           "response": [],
@@ -864,7 +1012,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "POST",
             "body": {
               "mode": "raw",
@@ -902,7 +1056,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "GET"
           },
           "response": [],
@@ -932,7 +1092,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "POST",
             "body": {
               "mode": "raw",
@@ -975,7 +1141,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "PATCH",
             "body": {
               "mode": "raw",
@@ -1018,7 +1190,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "GET"
           },
           "response": [],
@@ -1051,7 +1229,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "DELETE"
           },
           "response": [],
@@ -1084,7 +1268,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "PATCH",
             "body": {
               "mode": "raw",
@@ -1149,7 +1339,13 @@
               ],
               "variable": []
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "GET"
           },
           "response": [],
@@ -1169,7 +1365,13 @@
               "query": [],
               "variable": []
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "DELETE"
           },
           "response": [],
@@ -1212,7 +1414,13 @@
               ],
               "variable": []
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "POST"
           },
           "response": [],
@@ -1255,7 +1463,13 @@
               ],
               "variable": []
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "POST",
             "body": {
               "mode": "raw",
@@ -1301,7 +1515,13 @@
                 }
               ]
             },
-            "header": [],
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}",
+                "type": "string"
+              }
+            ],
             "method": "DELETE"
           },
           "response": [],
